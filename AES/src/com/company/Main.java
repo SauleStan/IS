@@ -44,20 +44,8 @@ public class Main {
         System.out.println("Encrypted: " + encryptedText);
 
         //reads encrypted text from a file
-        //String textToDecrypt = new String(Files.readAllBytes(Paths.get("C:\\Users\\Saule\\Desktop\\4th semester\\InfoSec\\AES\\encryptedTexts\\encryptedText.txt")));
-
-        //reads from file
-        File file = new File("C:\\Users\\Saule\\Desktop\\4th semester\\InfoSec\\AES\\encryptedTexts\\\\encryptedText.txt");
-        BufferedReader reader = new BufferedReader(new FileReader(file));
-        StringBuilder stringBuilder = new StringBuilder();
-        char[] buffer = new char [10];
-        while(reader.read(buffer) != -1){
-            stringBuilder.append(new String(buffer));
-            buffer = new char[10];
-        }
-        reader.close();
-        String textToDecrypt = stringBuilder.toString();
-
+        String textToDecrypt = new String(Files.readAllBytes(Paths.get("C:\\Users\\Saule\\Desktop\\4th semester\\InfoSec\\AES\\encryptedTexts\\encryptedText.txt")));
+        
         System.out.println("Read from file: " + textToDecrypt);
         System.out.println("Decrypted: " + aes.decrypt(textToDecrypt, key));
 
